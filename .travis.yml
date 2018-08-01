@@ -2,7 +2,8 @@ language: node_js
 node_js: stable
 
 script:
-  - echo hello
+  - npm install --prefix class4/test-app/
+  - npm run build --prefix class4/test-app/
 
 deploy:
   provider: pages
