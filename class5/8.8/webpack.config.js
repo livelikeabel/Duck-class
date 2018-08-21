@@ -18,6 +18,28 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: { modules: true }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              // limit: 1200,
+            }
+          }
+        ]
       }
     ]
   },
@@ -28,7 +50,10 @@ module.exports = {
   ],
   devServer: {
     // contentBase: path.join(__dirname, 'public'),
-    contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'assets')]
+    contentBase: [
+      path.join(__dirname, 'public'),
+      path.join(__dirname, 'assets')
+    ]
     // publicPath: '/blog/'
   }
 }

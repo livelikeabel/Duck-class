@@ -1,10 +1,16 @@
 import React from 'react'
+import kkyu from '../assets/kkyu.jpg'
+import css from './Hello.css'
+
+console.log(css)
 
 export default function Hello() {
   return (
-    <h1> 
-      Hello
-      <img src="../kkyu.jpg"/>     
-    </h1>
+    <div className={css.Hello}>
+      <h1>
+        Hello
+        <img src={kkyu} />
+      </h1>
+    </div>
   )
 }
