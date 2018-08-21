@@ -6,8 +6,7 @@ module.exports = {
   entry: './src/index.js',
   // output은 인터넷 보고 따라한거임
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: '[name].[hash].bundle.js'
   },
   mode: process.env.NODE_ENV == 'development' ? 'development' : 'production',
   module: {
